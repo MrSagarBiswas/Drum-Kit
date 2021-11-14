@@ -3,12 +3,14 @@ var btn = document.querySelectorAll("button");
 for (var i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", function () {
         makeSound(this.innerHTML);
+        animation(this.innerHTML);
     }
     )
 }
 
 document.addEventListener("keypress", function (pressed) {
     makeSound(pressed.key);
+    animation(pressed.key);
 })
 
 function makeSound(key) {
@@ -37,4 +39,11 @@ function makeSound(key) {
         default:
             console.log(this.innerText);
     }
+}
+
+function animation(key) {
+    document.querySelector("." + key).classList.add("clicked");
+    setTimeout(function () {
+        document.querySelector("." + key).classList.remove("clicked");
+    }, 100);
 }

@@ -92,3 +92,9 @@ footer {
   margin: 10px;
   background-color: white;
 }
+
+.clicked {
+  border: 10px solid rgba(75, 70, 70, 0.575);
+  opacity: 0.8;
+  padding: 2px;
+}
